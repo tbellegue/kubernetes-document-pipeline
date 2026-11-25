@@ -4,6 +4,7 @@ from app.processing import (
     sentence_count,
     top_words,
     unique_word_count,
+    word_count,
 )
 
 
@@ -25,6 +26,16 @@ def test_normalize_text_empty_string():
 
 def test_normalize_text_whitespace_only():
     assert normalize_text("   \n\t   ") == ""
+
+
+# word_count
+
+def test_word_count_counts_repeated_words_and_ignores_punctuation():
+    assert word_count("Hello, hello! -- world.") == 3
+
+
+def test_word_count_empty_string():
+    assert word_count("") == 0
 
 
 # character_count

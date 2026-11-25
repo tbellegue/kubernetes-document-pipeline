@@ -20,6 +20,13 @@ def _extract_words(text: str) -> list[str]:
     return _WORD_PATTERN.findall(text.lower())
 
 
+def word_count(text: str) -> int:
+    """
+    Return the number of words in text, ignoring punctuation.
+    """
+    return len(_extract_words(text))
+
+
 def character_count(text: str) -> int:
     """
     Return the number of characters in text, including spaces and punctuation.
